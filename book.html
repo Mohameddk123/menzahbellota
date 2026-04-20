@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Room — Menzah Bellota Tours</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="book.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.webp" alt="Menzah Bellota Logo" class="logo-img" />
+        <span class="logo-text">Menzah <strong>Bellota</strong></span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#food" class="nav-link">Food</a></li>
+        <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+        <li><a href="index.html#contact" class="nav-link nav-cta">Contact</a></li>
+      </ul>
+      <div class="nav-end">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== BOOKING PAGE ========== -->
+  <div class="book-page">
+
+    <!-- LEFT: Room Summary Card -->
+    <aside class="book-summary" id="bookSummary">
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <a href="rooms.html">Rooms</a>
+        <span>›</span>
+        <span class="current">Book</span>
+      </nav>
+
+      <div class="summary-card" id="summaryCard">
+        <div class="summary-img-wrap">
+          <img id="summaryImg" src="" alt="Room" />
+          <div class="summary-img-overlay">
+            <span id="summaryRoomNum">01</span>
+          </div>
+        </div>
+        <div class="summary-body">
+          <span class="summary-category">Rural Houses · Menzah Bellota</span>
+          <h2 id="summaryName">Room</h2>
+          <p id="summarySubtitle" class="summary-subtitle"></p>
+          <div class="summary-details">
+            <div class="summary-detail-item">
+              <span id="summaryBeds">🛏️</span>
+            </div>
+            <div class="summary-detail-item">
+              <span id="summaryGuests">👥</span>
+            </div>
+          </div>
+          <div class="summary-price">
+            <span class="sp-label">Price per night</span>
+            <span class="sp-amount">340 DH</span>
+          </div>
+          <div class="summary-policy">
+            <span>👶</span>
+            <div>
+              <strong>Children Policy</strong>
+              <p>Under 5 free · Ages 5–10 half price · Over 10 full price</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-includes">
+        <h4>What's included</h4>
+        <ul>
+          <li><span>✓</span> Homemade breakfast</li>
+          <li><span>✓</span> Free WiFi</li>
+          <li><span>✓</span> Access to organic garden</li>
+          <li><span>✓</span> Mountain nature walks</li>
+          <li><span>✓</span> Warm Moroccan welcome</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- RIGHT: Booking Form -->
+    <main class="book-form-area">
+      <div class="book-form-header">
+        <h1>Reserve Your Room</h1>
+        <p>Fill in your details and we'll confirm your booking on WhatsApp within a few hours.</p>
+      </div>
+
+      <form class="book-form" id="bookForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="guestName">Your Name <span class="required">*</span></label>
+            <input type="text" id="guestName" name="guestName" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="guestEmail">Email Address</label>
+            <input type="email" id="guestEmail" name="guestEmail" placeholder="you@example.com" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="guestPhone">Phone / WhatsApp <span class="required">*</span></label>
+          <input type="tel" id="guestPhone" name="guestPhone" placeholder="+212 6XX XXX XXX" required />
+        </div>
+
+        <div class="form-row date-row">
+          <div class="form-group">
+            <label for="checkIn">Check-in Date <span class="required">*</span></label>
+            <div class="date-input-wrap">
+              <span class="date-icon">📅</span>
+              <input type="text" id="checkIn" name="checkIn" placeholder="Select date" readonly required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="checkOut">Check-out Date <span class="required">*</span></label>
+            <div class="date-input-wrap">
+              <span class="date-icon">📅</span>
+              <input type="text" id="checkOut" name="checkOut" placeholder="Select date" readonly required />
+            </div>
+          </div>
+        </div>
+
+        <!-- Computed nights display -->
+        <div class="nights-summary" id="nightsSummary" style="display:none">
+          <span class="nights-icon">🌙</span>
+          <span id="nightsText">— nights · 340 DH/night = <strong id="totalPrice">—</strong> DH total</span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="guestAdults">Number of Adults</label>
+            <select id="guestAdults" name="guestAdults">
+              <option value="1">1 Adult</option>
+              <option value="2" selected>2 Adults</option>
+              <option value="3">3 Adults</option>
+              <option value="4">4 Adults</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="guestChildren">Number of Children</label>
+            <select id="guestChildren" name="guestChildren">
+              <option value="0" selected>No children</option>
+              <option value="1">1 Child</option>
+              <option value="2">2 Children</option>
+              <option value="3">3 Children</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="guestMessage">Special Requests or Questions</label>
+          <textarea id="guestMessage" name="guestMessage" rows="4" placeholder="Any dietary requirements, allergies, arrival time, or other requests…"></textarea>
+        </div>
+
+        <!-- Hidden: room name populated by JS -->
+        <input type="hidden" id="hiddenRoom" />
+
+        <button type="submit" class="btn btn-primary btn-full book-submit-btn" id="submitBtn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.104.55 4.078 1.504 5.797L0 24l6.383-1.474A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.028-1.38l-.36-.214-3.733.862.888-3.617-.235-.372A9.772 9.772 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/>
+          </svg>
+          Send Booking Request via WhatsApp
+        </button>
+
+        <p class="form-note">
+          Clicking this button will open WhatsApp with your booking details pre-filled. We'll confirm availability and reply shortly.
+        </p>
+      </form>
+    </main>
+
+  </div>
+
+  <!-- Scroll To Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/212600000000" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.104.55 4.078 1.504 5.797L0 24l6.383-1.474A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.028-1.38l-.36-.214-3.733.862.888-3.617-.235-.372A9.772 9.772 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="main.js"></script>
+  <script src="book.js"></script>
+</body>
+</html>
