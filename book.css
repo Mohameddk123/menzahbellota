@@ -2,7 +2,14 @@
    BOOKING PAGE — book.css
    ========================================= */
 
-html, body { overflow-x: hidden !important; width: 100%; max-width: 100%; }
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 body {
   background: var(--beige);
@@ -347,6 +354,10 @@ body {
   background: #25D366;
   box-shadow: 0 4px 20px rgba(37,211,102,.3);
   margin-top: 4px;
+  white-space: normal;
+  word-break: break-word;
+  max-width: 100%;
+  width: 100%;
 }
 .book-submit-btn:hover {
   background: #1ebe5d;
@@ -359,6 +370,7 @@ body {
   .book-page {
     grid-template-columns: 1fr;
     padding-top: 90px;
+    overflow-x: hidden;
   }
   .book-summary {
     position: static;
@@ -374,15 +386,50 @@ body {
     border-left: none;
     border-top: 1px solid var(--beige-dark);
     padding-top: 32px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .book-form {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .book-submit-btn {
+    max-width: 100% !important;
+    width: 100% !important;
+    font-size: 0.88rem;
+    white-space: normal;
+    word-break: break-word;
+    text-align: center;
+    justify-content: center;
+    padding: 14px 20px;
   }
 }
 
 @media (max-width: 640px) {
+  .book-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
   .book-summary {
     grid-template-columns: 1fr;
   }
   .book-summary .breadcrumb { grid-column: 1; }
-  .book-form { padding: 22px; }
-  .book-form-header h1 { font-size: 1.6rem; }
+  .book-form {
+    padding: 18px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .book-form-header h1 { font-size: 1.4rem; }
+  .book-form .form-row {
+    grid-template-columns: 1fr;
+  }
+  .book-submit-btn {
+    font-size: 0.82rem;
+    padding: 14px 16px;
+  }
+  .nights-summary {
+    font-size: 0.78rem;
+    flex-wrap: wrap;
+  }
 }
 
