@@ -122,35 +122,31 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-/* ---- Contact form ---- */
+/* ---- Contact form — send via WhatsApp ---- */
 const contactForm = document.getElementById('contactForm');
 const formSuccess  = document.getElementById('formSuccess');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
+  contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const btn = contactForm.querySelector('button[type="submit"]');
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-    try {
-      const res = await fetch(contactForm.action, {
-        method: 'POST',
-        body: new FormData(contactForm),
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        contactForm.style.display = 'none';
-        formSuccess.style.display = 'block';
-      } else {
-        btn.textContent = 'Send Message';
-        btn.disabled = false;
-        alert('Something went wrong. Please try again or contact us on WhatsApp.');
-      }
-    } catch {
-      btn.textContent = 'Send Message';
-      btn.disabled = false;
-      alert('Something went wrong. Please try again or contact us on WhatsApp.');
-    }
+    const name    = contactForm.querySelector('[name="name"]').value.trim();
+    const email   = contactForm.querySelector('[name="email"]').value.trim();
+    const dates   = contactForm.querySelector('[name="dates"]').value.trim();
+    const stay    = contactForm.querySelector('[name="stay"]').value;
+    const message = contactForm.querySelector('[name="message"]').value.trim();
+
+    const text = [
+      '🌿 *New Booking Request — Menzah Bellota*',
+      '',
+      `👤 *Name:* ${name}`,
+      `📧 *Email:* ${email}`,
+      dates   ? `📅 *Dates:* ${dates}`     : '',
+      stay    ? `🏕️ *Stay Type:* ${stay}`  : '',
+      message ? `💬 *Message:* ${message}` : '',
+    ].filter(Boolean).join('\n');
+
+    const waNumber = '212670826124';
+    window.open('https://wa.me/' + waNumber + '?text=' + encodeURIComponent(text), '_blank');
   });
 }
 
