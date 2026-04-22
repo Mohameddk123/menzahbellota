@@ -340,7 +340,7 @@ h3 { font-size: 1.25rem; }
   position: relative;
   background:
     linear-gradient(to bottom, rgba(10,30,20,.45) 0%, rgba(10,30,20,.6) 100%),
-    url('images/hero img.png') center/cover no-repeat;
+    url('images/hero2.png') center/cover no-repeat;
   padding: 120px 20px 60px;
 }
 
@@ -1540,7 +1540,12 @@ h3 { font-size: 1.25rem; }
   .section { padding: 60px 0; }
 
   /* Hero */
-  .hero { padding: 100px 20px 80px; }
+  .hero {
+    padding: 100px 20px 80px;
+    background:
+      linear-gradient(to bottom, rgba(10,30,20,.45) 0%, rgba(10,30,20,.6) 100%),
+      url('images/hero2 mobile.png') center/cover no-repeat;
+  }
   .hero-buttons { flex-direction: column; align-items: center; }
   .btn { width: 100%; max-width: 280px; justify-content: center; }
 

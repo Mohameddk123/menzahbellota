@@ -168,22 +168,3 @@ if (scrollTopBtn) {
   });
 }
 
-/* ---- Hero parallax (throttled via rAF) ---- */
-const hero = document.querySelector('.hero');
-if (hero) {
-  let rafPending = false;
-  let lastX = 0, lastY = 0;
-
-  document.addEventListener('mousemove', (e) => {
-    lastX = e.clientX;
-    lastY = e.clientY;
-    if (rafPending) return;
-    rafPending = true;
-    requestAnimationFrame(() => {
-      const dx = (lastX - window.innerWidth  / 2) / (window.innerWidth  / 2);
-      const dy = (lastY - window.innerHeight / 2) / (window.innerHeight / 2);
-      hero.style.backgroundPosition = `calc(50% + ${dx * 12}px) calc(50% + ${dy * 8}px)`;
-      rafPending = false;
-    });
-  }, { passive: true });
-}
