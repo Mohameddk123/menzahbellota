@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book Your Stay — Menzah Bellota Tours</title>
+  <title>Contact &amp; Book — Menzah Bellota Tours</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -41,117 +41,137 @@
       <nav class="breadcrumb" aria-label="breadcrumb">
         <a href="index.html">Home</a>
         <span>›</span>
-        <span class="current">Book Now</span>
+        <span class="current">Contact</span>
       </nav>
       <h1>Plan Your Visit<br /><em>to Menzah Bellota</em></h1>
-      <p>Ready to escape to the mountains? Fill out the form and we'll get back to you within 24 hours — or reach us instantly on WhatsApp.</p>
+      <p>Fill in the form below and we'll get back to you on WhatsApp within a few hours to confirm your stay.</p>
       <div class="page-hero-tags">
+        <span>📅 Fast Confirmation</span>
+        <span>💬 WhatsApp Reply</span>
         <span>🌿 Eco-Lodge</span>
-        <span>🏕️ Glamping</span>
-        <span>🚐 Van Pitches</span>
-        <span>🤝 Day Visits</span>
+        <span>🏔️ Rif Mountains</span>
       </div>
     </div>
   </div>
 
-  <!-- ========== CONTACT FORM ========== -->
-  <section class="section contact page-body" id="form">
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="section" id="form" style="background: #f9f6f0;">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Get in Touch</span>
-        <h2 class="section-title">Plan Your Visit</h2>
-        <p class="section-subtitle">Ready to escape? Fill out the form below and we'll get back to you within 24 hours. Or reach us instantly on WhatsApp.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-form-wrap reveal">
-          <form class="contact-form" id="contactForm" action="https://formspree.io/f/mzzbbwge" method="POST">
-            <input type="hidden" name="_replyto" value="dkouk285@gmail.com" />
+      <div class="contact-layout">
+
+        <!-- LEFT: Form -->
+        <div class="contact-form-wrap">
+          <div class="section-header" style="text-align:left; margin-bottom: 28px;">
+            <span class="section-tag">Get in Touch</span>
+            <h2 class="section-title">Reserve Your Room</h2>
+            <p class="section-subtitle">Tell us about your visit and we'll confirm availability on WhatsApp.</p>
+          </div>
+
+          <form class="contact-form" id="contactForm">
             <div class="form-row">
               <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="e.g. Ahmed Mansouri" required />
+                <label for="name">Your Name <span style="color:#e05454;font-size:.75rem;">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required />
               </div>
               <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+                <input type="email" id="email" name="email" placeholder="you@example.com" />
               </div>
             </div>
+
             <div class="form-group">
-              <label for="dates">Preferred Dates</label>
-              <input type="text" id="dates" name="dates" placeholder="e.g. June 10–15, 2025" />
+              <label for="phone">Phone / WhatsApp</label>
+              <input type="tel" id="phone" name="phone" placeholder="+212 6XX XXX XXX" />
             </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="dates">Travel Dates</label>
+                <input type="text" id="dates" name="dates" placeholder="e.g. 10-14 August 2025" />
+              </div>
+              <div class="form-group">
+                <label for="stay">Stay Type</label>
+                <select id="stay" name="stay">
+                  <option value="">Select...</option>
+                  <option>Room (Bed &amp; Breakfast)</option>
+                  <option>Tent (Glamping)</option>
+                  <option>Campervan Pitch</option>
+                  <option>Day Visit</option>
+                  <option>Group / Event</option>
+                </select>
+              </div>
+            </div>
+
             <div class="form-group">
-              <label for="stay">Type of Stay</label>
-              <select id="stay" name="stay">
-                <option value="">Select an option</option>
-                <option value="room">Eco Room</option>
-                <option value="camping">Camping</option>
-                <option value="dayvisit">Day Visit</option>
-                <option value="group">Group / Event</option>
-              </select>
+              <label for="message">Message / Special Requests</label>
+              <textarea id="message" name="message" rows="4" placeholder="Number of guests, dietary needs, arrival time, questions..."></textarea>
             </div>
-            <div class="form-group">
-              <label for="message">Your Message</label>
-              <textarea id="message" name="message" rows="4" placeholder="Tell us about your group, any questions, or special needs…"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-            <p class="form-note">We reply within 24 hours · Your info is never shared.</p>
+
+            <button type="submit" class="btn btn-primary btn-full" style="gap:10px;font-size:.95rem;padding:16px 32px;background:#25D366;box-shadow:0 4px 20px rgba(37,211,102,.3);white-space:normal;word-break:break-word;width:100%;max-width:100%;">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.104.55 4.078 1.504 5.797L0 24l6.383-1.474A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.028-1.38l-.36-.214-3.733.862.888-3.617-.235-.372A9.772 9.772 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/>
+              </svg>
+              Send Booking Request via WhatsApp
+            </button>
+            <p class="form-note" style="margin-top:12px;">Clicking will open WhatsApp with your details pre-filled. We reply within a few hours.</p>
           </form>
-          <div class="form-success" id="formSuccess">
-            <span>🌿</span>
-            <h3>Message Sent!</h3>
-            <p>Thank you for reaching out. We'll be in touch very soon.</p>
-          </div>
         </div>
-        <div class="contact-info reveal reveal-right">
-          <div class="contact-card">
-            <h3>Contact Details</h3>
-            <div class="contact-detail">
-              <span class="contact-icon">📍</span>
-              <div>
-                <strong>Location</strong>
-                <p>Near Ain Tissimane, Chefchaouen<br />Rif Mountains, Morocco</p>
-              </div>
-            </div>
-            <div class="contact-detail">
-              <span class="contact-icon">📞</span>
-              <div>
-                <strong>Phone / WhatsApp</strong>
-                <p>+212 6 70 82 61 24</p>
-              </div>
-            </div>
-            <div class="contact-detail">
-              <span class="contact-icon">✉️</span>
-              <div>
-                <strong>Email</strong>
-                <p>menzah.bellota@gmail.com</p>
-              </div>
-            </div>
-            <div class="contact-detail">
-              <span class="contact-icon">🕐</span>
-              <div>
-                <strong>Open Year-Round</strong>
-                <p>Check-in: 14:00 · Check-out: 11:00</p>
-              </div>
-            </div>
-            <a href="https://wa.me/212670826124" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.104.55 4.078 1.504 5.797L0 24l6.383-1.474A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.028-1.38l-.36-.214-3.733.862.888-3.617-.235-.372A9.772 9.772 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
-              Chat on WhatsApp
-            </a>
-          </div>
-          <div class="map-wrap">
+
+        <!-- RIGHT: Info -->
+        <div class="contact-info-wrap">
+          <div class="contact-info-card" style="background: var(--beige);">
+            <h3>Find Us</h3>
+            <ul class="contact-info-list">
+              <li>
+                <span>📍</span>
+                <div>
+                  <strong>Address</strong>
+                  <p>Km 18, Route de Chefchaouen N°13<br />Douar Bellouta, Commune Brikcha<br />Ouezzane, Morocco</p>
+                </div>
+              </li>
+              <li>
+                <span>📞</span>
+                <div>
+                  <strong>Phone / WhatsApp</strong>
+                  <p><a href="tel:+212670826124">+212 6 70 82 61 24</a></p>
+                </div>
+              </li>
+              <li>
+                <span>✉️</span>
+                <div>
+                  <strong>Email</strong>
+                  <p><a href="mailto:menzah.bellota@gmail.com">menzah.bellota@gmail.com</a></p>
+                </div>
+              </li>
+              <li>
+                <span>🕐</span>
+                <div>
+                  <strong>Check-in / Check-out</strong>
+                  <p>Check-in from 14:00 · Check-out by 12:00</p>
+                </div>
+              </li>
+            </ul>
+
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.58!2d-5.5279536!3d34.9522003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b2704b17335b9%3A0x24d07b735cd430d2!2sMenzah+Bellota+Camping+Guest+House!5e0!3m2!1sen!2sma!4v1680000000000"
-              width="100%"
-              height="260"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Menzah Bellota location"
-            ></iframe>
+              width="100%" height="200" style="border:0;border-radius:12px;margin-top:20px;display:block;"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div class="contact-info-card" style="margin-top:16px;">
+            <h3>What's Included</h3>
+            <ul class="contact-info-list">
+              <li><span>✓</span><div><p>Homemade Moroccan breakfast</p></div></li>
+              <li><span>✓</span><div><p>Free WiFi throughout the property</p></div></li>
+              <li><span>✓</span><div><p>Access to organic garden</p></div></li>
+              <li><span>✓</span><div><p>Mountain nature walks</p></div></li>
+              <li><span>✓</span><div><p>Warm Moroccan welcome</p></div></li>
+            </ul>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -207,6 +227,7 @@
     </div>
   </footer>
 
+  <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/212670826124" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.104.55 4.078 1.504 5.797L0 24l6.383-1.474A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.028-1.38l-.36-.214-3.733.862.888-3.617-.235-.372A9.772 9.772 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
   </a>
