@@ -5,7 +5,7 @@
    to WhatsApp on form submit.
    ========================================= */
 
-const WHATSAPP_NUMBER  = '905355798871';
+const WHATSAPP_NUMBER  = '212670826124';
 const PRICE_PER_NIGHT  = 20;
 
 const TENTS = {
